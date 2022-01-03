@@ -14,8 +14,9 @@ const recipeListSlice = createSlice({
         },
         processFetch(state, action){
             state.status = "idle";
+            const recipes = action.payload.recipes;
             let x = {};
-            for (let item of action.payload){
+            for (let item of recipes){
                 x[item.rid] = item;
             }
             state.entities = x;

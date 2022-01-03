@@ -17,7 +17,7 @@ function RecipeDetail(){
     // useEffect(()=>{
     //     console.log(recipe);
     // }, [recipe]);
-    if(recipe.recipe && recipe.author){
+    if(recipe.recipe && recipe.author && recipe.instructions && recipe.ingredients){
         return (
 
             <div className="container card">

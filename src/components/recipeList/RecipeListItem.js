@@ -16,7 +16,7 @@ function RecipeListItem (props){
     return (
         <div className="container card">
             <div className="container body">
-                <Link to={recipe_link} style={{ textDecoration: 'none' }}>
+                <Link to={recipe_link}>
             <li>
                 {recipe.name}
 

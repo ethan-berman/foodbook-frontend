@@ -1,25 +1,27 @@
 import logo from './logo.svg';
 import './App.css';
-
+import {useEffect} from "react";
+import {useDispatch, useSelector} from "react-redux";
+import {selectRecipes} from "./features/recipes/recipeListSlice";
+import {RecipeList} from "./components/recipeList";
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const dispatch = useDispatch();
+    useEffect(()=>{
+        dispatch({"type":"LIST_RECIPES"});
+    }, [dispatch]);
+    const recipes = useSelector(selectRecipes);
+    return (
+        <div className="App">
+            {/*<ul>*/}
+            {/*    { recipes.map((recipe, index)=>*/}
+            {/*        <li key={index}>*/}
+            {/*            {recipe.name}*/}
+            {/*        </li>*/}
+            {/*    )}*/}
+            {/*</ul>*/}
+            <RecipeList />
+        </div>
+    );
 }
 
 export default App;

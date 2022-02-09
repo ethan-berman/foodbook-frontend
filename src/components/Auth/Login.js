@@ -1,5 +1,6 @@
 import {useDispatch} from "react-redux";
 import {useNavigate} from "react-router-dom";
+import {Button, Form} from "react-bootstrap";
 
 const {useState} = require("react");
 
@@ -26,13 +27,26 @@ function Login() {
     return (
         <div className="container card">
             <div className="card-body">
-                <form>
-                    <input value={username} onChange={handleUsernameChange} />
-                    <input type="password" value={password} onChange={handlePasswordChange} />
-                    <button onClick={handleSubmit}> submit</button>
-                </form>
+                <Form onSubmit={handleSubmit}>
+                    <Form.Group>
+                        <Form.Label> Username </Form.Label>
+                        <Form.Control value={username}
+                                      onChange={handleUsernameChange}
+                                      type="text"/>
+                    </Form.Group>
+                    <Form.Group>
+                        <Form.Label> Password</Form.Label>
+                        <Form.Control value={password}
+                                      onChange={handlePasswordChange}
+                                      type="password"/>
+                    </Form.Group>
+                        <Button type="submit"> Submit</Button>
+                    {/*<input value={username} onChange={handleUsernameChange} />*/}
+                    {/*<input type="password" value={password} onChange={handlePasswordChange} />*/}
+                    {/*<button onClick={handleSubmit}> submit</button>*/}
+                </Form>
             </div>
         </div>
     )
-};
+}
 export default Login;

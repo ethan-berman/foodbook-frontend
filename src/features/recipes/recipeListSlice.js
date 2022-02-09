@@ -25,14 +25,14 @@ const recipeListSlice = createSlice({
         endFetch(state, action){
             state.status = "errored";
             state.error = action.payload;
-        }
+        },
     }
 });
 
 export default recipeListSlice.reducer;
 export const {startFetch, processFetch, endFetch} = recipeListSlice.actions;
 
-const selectRecipeList = (state) => state.recipeList.entities
+const selectRecipeList = (state) => state.rootReducer.recipeList.entities
 
 export const selectRecipes = createSelector(selectRecipeList, (entities) =>
     Object.values(entities)

@@ -1,5 +1,4 @@
-import createResourceSlice from "../common/commonSlice";
-import {createSelector, createSlice} from "@reduxjs/toolkit";
+import { createSlice} from "@reduxjs/toolkit";
 
 const initialState = {
     status: "idle",
@@ -28,6 +27,4 @@ const currentRecipeSlice = createSlice({
 export default currentRecipeSlice.reducer;
 export const {startFetch, processFetch, endFetch} = currentRecipeSlice.actions;
 
-export const selectRecipeContent = (state) => state.currentRecipe.content;
-
-// export const selectRecipeDetail = createSelector(selectRecipeContent, (entities) => entities);
+export const selectRecipeContent = (state) => state.rootReducer.currentRecipe.content;

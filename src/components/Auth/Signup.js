@@ -35,8 +35,8 @@ function Signup(){
             <div className="card-body">
                 <form>
                     <input value={username} onChange={handleUsername}/>
-                    <input value={password} onChange={handlePassword}/>
-                    <input value={password2} onChange={handlePassword2}/>
+                    <input type="password" value={password} onChange={handlePassword}/>
+                    <input type="password" value={password2} onChange={handlePassword2}/>
                     <button onClick={handleSubmit}> Submit </button>
                 </form>
             </div>

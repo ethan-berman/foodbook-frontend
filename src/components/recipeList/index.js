@@ -1,3 +1,4 @@
 import RecipeList from "./RecipeList";
 import RecipeListItem from "./RecipeListItem";
-export {RecipeList, RecipeListItem};
+import RecipeSearch from "./RecipeSearch";
+export {RecipeList, RecipeListItem, RecipeSearch};

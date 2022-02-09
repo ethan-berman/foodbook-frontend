@@ -1,7 +1,8 @@
-import { put, takeEvery, all, call } from 'redux-saga/effects';
+import { put, all, call } from 'redux-saga/effects';
 import recipeListSaga from "../features/recipes/recipeListSaga";
 import currentRecipeSaga from "../features/currentRecipe/currentRecipeSaga";
 import userSaga from "../features/user/userSaga";
+import newRecipeSaga from "../features/newRecipe/newRecipeSaga";
 import {getAllEntities} from "../features/common/services";
 import {endFetch, processFetch} from "../features/user/userSlice";
 export function* helloSaga() {
@@ -28,5 +29,6 @@ export default function* rootSaga() {
         recipeListSaga(),
         currentRecipeSaga(),
         userSaga(),
+        newRecipeSaga(),
     ])
 }

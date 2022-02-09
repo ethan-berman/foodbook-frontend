@@ -8,7 +8,8 @@ import {store} from "./redux/store";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import {RecipeDetail} from "./components/recipeDetail";
 import {Navigation} from "./components/Navigation";
-import {Login, Signup} from "./components/Auth";
+import {Login, Logout, Signup} from "./components/Auth";
+import {RecipeCreate} from "./components/recipeCreate";
 
 ReactDOM.render(
     <React.StrictMode>
@@ -17,9 +18,11 @@ ReactDOM.render(
                 <Navigation />
                 <Routes>
                     <Route path="/" element={<App />} />
-                    <Route path="/recipe/:rid" element={<RecipeDetail />} />
+                    <Route path="/recipes/:rid" element={<RecipeDetail />} />
                     <Route path="/login" element={<Login />}/>
                     <Route path="/signup" element={<Signup />} />
+                    <Route path="/logout" element={<Logout />} />
+                    <Route path="/recipes/new" element={<RecipeCreate />} />
                 </Routes>
             </BrowserRouter>
         </Provider>

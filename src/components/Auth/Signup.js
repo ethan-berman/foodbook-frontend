@@ -1,5 +1,6 @@
 import {useDispatch} from "react-redux";
 import { useNavigate} from "react-router-dom";
+import {Button, Form} from "react-bootstrap";
 
 const {useState} = require("react");
 
@@ -33,14 +34,33 @@ function Signup(){
     return (
         <div className="container card">
             <div className="card-body">
-                <form>
-                    <input value={username} onChange={handleUsername}/>
-                    <input type="password" value={password} onChange={handlePassword}/>
-                    <input type="password" value={password2} onChange={handlePassword2}/>
-                    <button onClick={handleSubmit}> Submit </button>
-                </form>
+                <Form onSubmit={handleSubmit}>
+                    <Form.Group>
+                        <Form.Label> Username </Form.Label>
+                        <Form.Control value={username}
+                                      onChange={handleUsername}
+                                      type="text"/>
+                    </Form.Group>
+                    <Form.Group>
+                        <Form.Label> Password </Form.Label>
+                        <Form.Control value={password}
+                                      onChange={handlePassword}
+                                      type="password"/>
+                    </Form.Group>
+                    <Form.Group>
+                        <Form.Label> Confirm Password </Form.Label>
+                        <Form.Control value={password2}
+                                      onChange={handlePassword2}
+                                      type="password"/>
+                    </Form.Group>
+                    <Button type="submit"> Submit </Button>
+                    {/*<input value={username} onChange={handleUsername}/>*/}
+                    {/*<input type="password" value={password} onChange={handlePassword}/>*/}
+                    {/*<input type="password" value={password2} onChange={handlePassword2}/>*/}
+                    {/*<button onClick={handleSubmit}> Submit </button>*/}
+                </Form>
             </div>
         </div>
     )
-};
+}
 export default Signup;
